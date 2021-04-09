@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:4000/api
+
+# Products
+
+# @name getAll
+GET {{baseUrl}}/products
+
+###
+
+# @name filter
+GET {{baseUrl}}/products?color=turquoise
+
+###
+
+# @name filter like
+GET {{baseUrl}}/products?name_like=Chair
+
+###
+
+# @name pagination
+GET {{baseUrl}}/products?_page=1&_limit=5
+
+###
+
+# @name addNew
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Laptop"
+}
+
+###
+
+# @name update
+PATCH {{baseUrl}}/products/2
+Content-Type: application/json
+
+{
+  "name": "New Laptop"
+}
+
+###
+
+# @name remove
+DELETE {{baseUrl}}/products/2
